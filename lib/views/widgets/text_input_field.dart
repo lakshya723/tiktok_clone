@@ -19,7 +19,7 @@ class TextInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      decoration: InputDecoration(
+      decoration: InputDecoration( 
         labelText: labelText,
         prefixIcon: Icon(icon),
         labelStyle: const TextStyle(
