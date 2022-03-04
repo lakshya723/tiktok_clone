@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/controllers/auth_controller.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
 
 import '../../../constants.dart';
 import '../../widgets/text_input_field.dart';
@@ -9,7 +9,7 @@ class SignupScreen extends StatelessWidget {
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-    final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +49,7 @@ class SignupScreen extends StatelessWidget {
                   bottom: -10,
                   left: 80,
                   child: IconButton(
-                    onPressed: () {
-                      print('hello');
-                    },
+                    onPressed: () => authController.pickImage(),
                     icon: const Icon(
                       Icons.add_a_photo,
                     ),
@@ -62,7 +60,7 @@ class SignupScreen extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-             Container(
+            Container(
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: TextInputField(
@@ -109,8 +107,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                
-                onTap: () =>authController.registerUser(
+                onTap: () => authController.registerUser(
                   _usernameController.text,
                   _emailController.text,
                   _passwordController.text,
@@ -126,8 +123,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              ),
-            
+            ),
             const SizedBox(
               height: 15,
             ),
@@ -141,11 +137,11 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  // onTap: () => Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => SignupScreen(),
-                  //   ),
-                  // ),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  ),
                   child: Text(
                     'Login',
                     style: TextStyle(fontSize: 20, color: buttonColor),
