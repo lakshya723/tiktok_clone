@@ -16,8 +16,9 @@ class AuthController extends GetxController {
   late Rx<User?> _user;
 
   File? get profilePhoto => _pickedImage.value;
+  User get user => _user.value!;
 
-    @override
+  @override
   void onReady() {
     super.onReady();
     _user = Rx<User?>(firebaseAuth.currentUser);
@@ -93,7 +94,7 @@ class AuthController extends GetxController {
       );
     }
   }
-  
+
   void loginUser(String email, String password) async {
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
@@ -116,7 +117,4 @@ class AuthController extends GetxController {
   void signOut() async {
     await firebaseAuth.signOut();
   }
-
-
-
 }

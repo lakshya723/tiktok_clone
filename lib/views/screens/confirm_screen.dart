@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tiktok_tutorial/controllers/upload_video_controller.dart';
-import 'package:tiktok_tutorial/views/widgets/text_input_field.dart';
 import 'package:video_player/video_player.dart';
+import '../../controllers/upload_video_controller.dart';
+import '../widgets/text_input_field.dart';
 
 class ConfirmScreen extends StatefulWidget {
   final File videoFile;
@@ -20,8 +20,8 @@ class ConfirmScreen extends StatefulWidget {
 
 class _ConfirmScreenState extends State<ConfirmScreen> {
   late VideoPlayerController controller;
-  TextEditingController _songController = TextEditingController();
-  TextEditingController _captionController = TextEditingController();
+  final TextEditingController _songController = TextEditingController();
+  final TextEditingController _captionController = TextEditingController();
 
   UploadVideoController uploadVideoController =
       Get.put(UploadVideoController());

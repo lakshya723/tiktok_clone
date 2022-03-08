@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
 import '../widgets/custom_icon.dart';
 
@@ -11,13 +10,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-    int pageIdx = 0;
+  int pageIdx = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          onTap: (idx) {
+        onTap: (idx) {
           setState(() {
             pageIdx = idx;
           });
@@ -51,7 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: pages[pageIdx],
-      ),
     );
   }
 }
