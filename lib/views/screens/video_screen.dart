@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:tiktok_clone/views/widgets/video_player_iten.dart';
 import '../../constants.dart';
 import '../../controllers/video_controller.dart';
-import '../screens/comment_screen.dart';
-import 'circle_animation.dart';
+import 'comment_screen.dart';
+import '../widgets/circle_animation.dart';
 
 class VideoScreen extends StatelessWidget {
   VideoScreen({Key? key}) : super(key: key);
